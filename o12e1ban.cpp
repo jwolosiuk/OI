@@ -24,16 +24,6 @@ int bin_search(int znak, int atLeast){
 int main(){
     int n;
     cin >> n;
-    /*    for(int i=0;i<n;i++){
-    int x;
-    cin >> x;
-    miejsca[0].push_back(x);
-    }
-    while(1){
-    cin >> n;
-    cout << bin_search(0,n);
-    }
-    return 0;*/
     bool destroy=false;
     for(int i=0;i<n;i++){
         int len;
@@ -44,7 +34,6 @@ int main(){
             miejsca[znak-'0'].push_back(j);
         }
         for(int a=0;a<10;a++){
-    //        cout << "OKa";
             int ia=-1;
             bool dea=false;
             if(miejsca[a].size()!=0){
@@ -53,14 +42,12 @@ int main(){
                 dea=true;
             }
             for(int b=0;b<10;b++){
-     //           cout << "OKb";
                 int ib=bin_search(b,ia);
                 bool deb=false;
                 if(ib==-1 or dea){
                     deb=true;
                 }
                 for(int c=0;c<10;c++){
- //                   cout << "OKc";
                     int ic=bin_search(c,ib);
                     bool dec = false;
                     if(ic==-1 or deb) dec=true;
@@ -68,7 +55,6 @@ int main(){
                         int id=bin_search(d,ic);
                         int key = 1000*a + 100*b + 10*c + d;
                         if(id==-1 or dec) cantBe[key]=true;
-   //                     cout << "OKd";
                     }
                 }
             }
